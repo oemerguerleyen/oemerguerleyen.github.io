@@ -1,1 +1,177 @@
+# Mock-Wissensbasis – EDIFACT Monitoring Agent
+
+## Zweck
+Diese Datei enthält verifizierbare Mock-Daten für den EDIFACT Monitoring Agent.
+Nutze die Datei nur für folgende Intents:
+- APERAK_Status
+- CONTRL_Status
+- MSCONS_Status
+- MSCONS_Fehlermeldung
+
+## Verwendungsregel
+- Gleiche nur auf Basis von Werten ab, die bereits aus der E-Mail extrahiert wurden.
+- Nutze bevorzugt MaLo, Dokumenttyp, Referenz und Nachrichtendatum.
+- Übernimm ausschließlich eindeutige Treffer in `verified_data`.
+- Wenn bei Fehlerfällen Referenz oder Datum fehlen und keine eindeutige Zuordnung möglich ist, setze `requires_human_review = true`.
+
+---
+
+## EDI-001
+Intent: APERAK_Status
+MaLo: DE222222222
+Dokumenttyp: APERAK
+Verifizierte Daten:
+- Status: erfolgreich verarbeitet
+
+## EDI-002
+Intent: APERAK_Status
+MaLo: DE222222223
+Dokumenttyp: APERAK
+Verifizierte Daten:
+- Status: in Verarbeitung
+
+## EDI-003
+Intent: APERAK_Status
+MaLo: DE222222224
+Dokumenttyp: APERAK
+Verifizierte Daten:
+- Status: fachlich abgelehnt
+- Fehlercode: APERAK_301
+
+## EDI-004
+Intent: APERAK_Status
+Referenz: REF-APERAK-9001
+Dokumenttyp: APERAK
+Verifizierte Daten:
+- Status: erfolgreich verarbeitet
+- Nachrichtendatum: 2025-01-12
+
+## EDI-005
+Intent: APERAK_Status
+Referenz: REF-APERAK-9002
+Dokumenttyp: APERAK
+Verifizierte Daten:
+- Status: fehlerhaft verarbeitet
+- Fehlercode: APERAK_417
+- Nachrichtendatum: 2025-02-04
+
+## EDI-006
+Intent: CONTRL_Status
+MaLo: DE333333331
+Dokumenttyp: CONTRL
+Verifizierte Daten:
+- Status: erfolgreich empfangen
+
+## EDI-007
+Intent: CONTRL_Status
+MaLo: DE333333332
+Dokumenttyp: CONTRL
+Verifizierte Daten:
+- Status: ausstehend
+
+## EDI-008
+Intent: CONTRL_Status
+MaLo: DE333333333
+Dokumenttyp: CONTRL
+Verifizierte Daten:
+- Status: technisch abgelehnt
+- Fehlercode: CONTRL_105
+
+## EDI-009
+Intent: CONTRL_Status
+Referenz: REF-CONTRL-7001
+Dokumenttyp: CONTRL
+Verifizierte Daten:
+- Status: erfolgreich empfangen
+- Nachrichtendatum: 2025-03-10
+
+## EDI-010
+Intent: CONTRL_Status
+Referenz: REF-CONTRL-7002
+Dokumenttyp: CONTRL
+Verifizierte Daten:
+- Status: technisch abgelehnt
+- Fehlercode: CONTRL_221
+- Nachrichtendatum: 2025-03-11
+
+## EDI-011
+Intent: MSCONS_Status
+MaLo: DE444444441
+Dokumenttyp: MSCONS
+Verifizierte Daten:
+- Status: erfolgreich verarbeitet
+
+## EDI-012
+Intent: MSCONS_Status
+MaLo: DE444444442
+Dokumenttyp: MSCONS
+Verifizierte Daten:
+- Status: in Verarbeitung
+
+## EDI-013
+Intent: MSCONS_Status
+MaLo: DE444444443
+Dokumenttyp: MSCONS
+Verifizierte Daten:
+- Status: fehlerhaft verarbeitet
+- Fehlercode: MSCONS_102
+
+## EDI-014
+Intent: MSCONS_Status
+Referenz: REF-MSCONS-5001
+Dokumenttyp: MSCONS
+Verifizierte Daten:
+- Status: erfolgreich verarbeitet
+- Nachrichtendatum: 2025-02-18
+
+## EDI-015
+Intent: MSCONS_Status
+Referenz: REF-MSCONS-5002
+Dokumenttyp: MSCONS
+Verifizierte Daten:
+- Status: fehlerhaft verarbeitet
+- Fehlercode: MSCONS_208
+- Nachrichtendatum: 2025-02-20
+
+## EDI-016
+Intent: MSCONS_Fehlermeldung
+MaLo: DE444444444
+Dokumenttyp: MSCONS
+Verifizierte Daten:
+- Status: fehlerhaft verarbeitet
+- Fehlercode: MSCONS_102
+
+## EDI-017
+Intent: MSCONS_Fehlermeldung
+Referenz: REF-MSCONS-5003
+Dokumenttyp: MSCONS
+Verifizierte Daten:
+- Status: fehlerhaft verarbeitet
+- Fehlercode: MSCONS_315
+- Nachrichtendatum: 2025-04-02
+
+## EDI-018
+Intent: MSCONS_Fehlermeldung
+Referenz: REF-MSCONS-5004
+Dokumenttyp: MSCONS
+Verifizierte Daten:
+- Status: fehlerhaft verarbeitet
+- Fehlercode: MSCONS_411
+- Nachrichtendatum: 2025-04-04
+
+## EDI-019
+Intent: MSCONS_Fehlermeldung
+MaLo: DE444444445
+Dokumenttyp: MSCONS
+Verifizierte Daten:
+- Status: fachliche Prüfung erforderlich
+- Hinweis: mehrere Fehlerhinweise vorhanden
+
+## EDI-020
+Intent: MSCONS_Fehlermeldung
+MaLo: DE444444446
+Dokumenttyp: MSCONS
+Verifizierte Daten:
+- Status: keine eindeutige Referenz vorhanden
+- Hinweis: nur nach zusätzlicher Referenz sicher zuordenbar
 
